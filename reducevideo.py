@@ -2,9 +2,7 @@ import ffmpeg
 
 def reduce_video_size(input_file, output_file, codec='libx264', crf=23, preset='medium', tune=None):
     try:
-        input_stream = ffmpeg.input(input_file)
-        output_stream = ffmpeg.output(input_stream, output_file, codec=codec, crf=crf, preset=preset, tune=tune)
-        ffmpeg.run(output_stream, overwrite_output=True)
+        ffmpeg.input(input_file).output(output_file, codec=codec, crf=
         print(f"Video successfully compressed to {output_file}")
     except ffmpeg.Error as e:
         print(f"Error: {e.stderr}")
