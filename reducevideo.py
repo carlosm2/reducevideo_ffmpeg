@@ -1,4 +1,4 @@
-import ffmpeg
+import ffmpeg # importa libreria ffmpeg, entonces se tiene que instalar antes
 
 def reduce_video_size(input_file, output_file, codec='libx264', crf=23, preset='medium', tune=None):
     try:
